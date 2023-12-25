@@ -1,38 +1,172 @@
-.App {
+body {
+  font-family: sans-serif;
+  background: rgb(31, 41, 44);
+  
+  margin: 0;
+  padding: 0;
+}
+
+.appContainer {
   text-align: center;
+  background: rgb(10, 181, 238);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Header {
+  font-size: 3rem;
+  margin: 4rem 0 0 0;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Subtitle {
+  color: #1a1a11;
+  font-size: 1.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ContentContainer {
+  max-width: 950px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.DropzoneWrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 2px dashed #333;
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  transition: border 0.3s ease;
+  background-color: #f5f5f5;
+}
+
+.DropzoneWrapper.active {
+  border: 2px dashed #4caf50;
+}
+
+.DropzoneWrapper.reject {
+  border: 2px dashed #ff3d00;
+}
+
+.DropzoneWrapper p {
+  margin: 0;
+  color: #555;
+}
+
+.ResultContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ResultImage {
+  margin-bottom: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.ResultImage img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.ResultText {
+  width: 100%;
+  white-space: pre-wrap;
+  font-size: 1.2rem;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.ErrorText {
+  color: red;
+}
+
+.EditButtons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.EditButtons button {
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.FiltersContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 20px;
+}
+
+.FiltersContainer label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.FiltersContainer input {
+  padding: 8px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.FiltersContainer button {
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #2196f3;
   color: white;
+  border: none;
+  border-radius: 5px;
+  outline: none;
 }
 
-.App-link {
-  color: #61dafb;
+.HistoryContainer {
+  margin-top: 20px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.HistoryContainer h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.HistoryContainer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.HistoryContainer li {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 1000px) {
+  .ResultContainer {
+    flex-direction: row;
   }
-  to {
-    transform: rotate(360deg);
+
+  .ResultText {
+    width: 50%;
   }
 }
