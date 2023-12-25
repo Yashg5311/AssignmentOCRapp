@@ -87,5 +87,31 @@ The API will respond with a JSON object containing the result of the operation. 
 
 ##  The OcrRecordSchema
 
-The OcrRecordSchema object defines the structure of the OcrRecord model. Each property in the schema represents a field in the MongoDB document.
+The OcrRecordSchema object defines the structure of the OcrRecord model. Each property in the schema represents a field in the MongoDB document.the Mongoose library is utilized to define an OCR record schema for MongoDB, encapsulating fields such as name, last name, identification number, dates of issue, expiry, and birth, along with a status field constrained to 'success' or 'failure'. The schema also includes a timestamp reflecting the record's creation time. The schema is then converted into a Mongoose model named OcrRecord. This model, representing a MongoDB collection, is equipped with features like data validation and query building. The defined schema ensures a structured format for OCR records, and the resulting model is exported for use throughout the application. This integration with MongoDB facilitates organized and type-safe interactions with the database, adhering to a predefined data structure.
+
+##  Preprocessing and Tesseract.js 
+
+We have implemented  features like comprehensive image processing pipeline within a React application for Optical Character Recognition (OCR). The preprocessImage function employs the ImageJS library to enhance image quality through brightness and contrast adjustments, size increase, noise removal, and DPI standardization. The handleImageDrop function, triggered upon image drop, utilizes this preprocessing before employing Tesseract.js for OCR in English. It logs the recognized text, parses OCR results, and updates the application state with the extracted data. Additionally, it communicates with a server to store the OCR data and manages the state of the application, including handling errors and maintaining the record ID. This integrated approach ensures robust text recognition from images while providing a user-friendly interface in a React environment.
+
+## Screenshots of some Functionality
+
+1. Main Screen
+    ![Screenshot (273)](https://github.com/Yashg5311/AssignmentOCRapp/assets/91370994/cf3a9586-753b-4c18-a843-99166dc8886c)
+
+   
+2. Uploading Image
+   ![Screenshot (274)](https://github.com/Yashg5311/AssignmentOCRapp/assets/91370994/443792e0-3054-49b5-ae8b-fd2c03713cda)
+
+
+3. Extraction of Fields
+   ![Screenshot (275)](https://github.com/Yashg5311/AssignmentOCRapp/assets/91370994/361122fb-4cf9-4032-837f-7bd94250de68)
+
+
+4. Editting of Fields
+   ![Screenshot (276)](https://github.com/Yashg5311/AssignmentOCRapp/assets/91370994/de605208-e621-4a32-8315-2a06bf19e58e)
+
+
+5. Implementing Search Filter
+   ![Screenshot (277)](https://github.com/Yashg5311/AssignmentOCRapp/assets/91370994/2c9a08db-f763-477d-89ba-d12da37d6522)
+
 
