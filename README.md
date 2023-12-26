@@ -77,11 +77,11 @@ To use the API, you can send HTTP requests to the specified routes. For example,
 
 json
 {
-  "name": "John Doe",
-  "Identification_Number": "123456789",
-  "date_of_birth": "1990-01-01",
-  "date_of_issue": "2023-01-01",
-  "date_of_expiry": "2025-01-01"
+  - "name": "John Doe",
+  - "Identification_Number": "123456789",
+  - "date_of_birth": "1990-01-01",
+  - "date_of_issue": "2023-01-01",
+  - "date_of_expiry": "2025-01-01"
 }
 
 
@@ -100,23 +100,66 @@ We have implemented  features like comprehensive image processing pipeline withi
 1. Main Screen
     ![Screenshot (273)](https://github.com/Yashg5311/AssignmentOCRapp/assets/91370994/cf3a9586-753b-4c18-a843-99166dc8886c)
 
+   The main Screen consists of a Drop Box and Heading wherev you can drop the image and features can be Extracted.
+
    
 2. Uploading Image
    ![Screenshot (274)](https://github.com/Yashg5311/AssignmentOCRapp/assets/91370994/443792e0-3054-49b5-ae8b-fd2c03713cda)
 
 
+   You can Upload the image and see the extracted json object and fileds.
+
 3. Extraction of Fields
    ![Screenshot (275)](https://github.com/Yashg5311/AssignmentOCRapp/assets/91370994/361122fb-4cf9-4032-837f-7bd94250de68)
 
+  You can see the fields such as Name, Identification No, Dtae of Expiry, Date of Birth etc.
 
 4. Editting of Fields
    ![Screenshot (276)](https://github.com/Yashg5311/AssignmentOCRapp/assets/91370994/de605208-e621-4a32-8315-2a06bf19e58e)
 
+   You can modify these fiels and edit them dynamically anmd everything will be stored in MongoDB.
+    The Edition nad Deletion will also update in MongoDB and no new field will be created.
 
-5. Implementing Search Filter
+
+6. Implementing Search Filter
    ![Screenshot (277)](https://github.com/Yashg5311/AssignmentOCRapp/assets/91370994/2c9a08db-f763-477d-89ba-d12da37d6522)
+  The search functionality works on basis of Name and Identification Number and results get displayed.
 
+
+## Tech Stack Choice and Reasons
+
+1. React for FrontEnd
+   React is a JavaScript library maintained by Facebook that is widely used for building user interfaces, especially single-page applications where dynamic content updates are crucial. 
+   One of the main advantages of React is its component-based architecture, which promotes modularity and reusability of code. This makes it easier to manage and scale complex 
+   applications, such as those involving OCR processing.
+
+   React's virtual DOM (Document Object Model) allows for efficient updates to the user interface by minimizing the number of direct manipulations to the actual DOM. This results in 
+   better performance and a smoother user experience, which is essential for a responsive OCR application. Additionally, React's declarative approach to building UIs simplifies the 
+   process of creating interactive and dynamic interfaces, enabling you to efficiently handle the real-time updates and responses that an OCR app requires.
+
+   Moreover, React has a vast and active community, which means there is a wealth of resources, libraries, and third-party components available. This can significantly expedite 
+    development, enhance code quality, and facilitate troubleshooting through community support.
+
+
+2. NodeJs and ExpressJs for Backend
+   Choosing Node.js and Express.js for the OCR application's backend offers a unified JavaScript stack, allowing seamless integration with the React frontend. Node.js's asynchronous, 
+   non-blocking architecture ensures efficient handling of concurrent OCR processing and multiple requests, crucial for image uploads and API interactions. Express.js simplifies API 
+   development with its minimalistic yet powerful framework, providing middleware support for features like error handling and authentication. The V8 engine's fast execution makes - 
+  Node.js suitable for computationally intensive tasks, such as OCR processing, while the large ecosystem and active community enhance development speed and scalability, aligning well 
+   with the project's requirements.
+
+3. MongoDB for database
+Selecting MongoDB as the database for your OCR application presents several advantages. MongoDB is a NoSQL, document-oriented database that stores data in flexible, JSON-like BSON format, allowing for easy and dynamic schema modifications. This flexibility is particularly valuable when dealing with diverse OCR results and evolving data structures. MongoDB's scalability and distributed architecture make it suitable for handling growing datasets, essential for storing OCR records over time. Additionally, its support for indexing and querying facilitates efficient retrieval of specific OCR records, aligning with the filtering requirements of your REST API endpoints. The JSON-like nature of MongoDB documents also ensures a seamless integration with the JSON structure of OCR results, simplifying data storage and retrieval. Overall, MongoDB provides a scalable, flexible, and schema-less solution, well-suited for the dynamic nature of OCR data in your application.
+
+
+4. Tesseract for Image Extraction
+ Opting for Tesseract for image extraction in your OCR application brings several benefits. Tesseract is an open-source OCR engine with robust capabilities in text recognition from images. It supports multiple languages, including Thai, making it suitable for your specific use case. Tesseract's accuracy in extracting text from various types of images, including those with complex layouts and fonts, is noteworthy. Its flexibility and extensibility allow for fine-tuning to improve accuracy, essential for accurately extracting information from Thai ID cards. Furthermore, Tesseract can be integrated into your application with ease, and its active open-source community ensures ongoing support and improvements. In summary, Tesseract is a reliable and powerful choice for image extraction, ensuring accurate and efficient processing of Thai ID card images in your OCR application.
+
+
+
+ 5.Image-js for Preprocessing
+  Image-js is a JavaScript library designed for image processing tasks, providing a range of functions for manipulating and enhancing images. Its integration seamlessly with Node.js makes it convenient for server-side preprocessing, especially when dealing with image inputs before passing them to the OCR engine. Image-js offers capabilities such as resizing, cropping, filtering, and color adjustments, which are essential for optimizing image quality and improving OCR accuracy. Leveraging Image-js for preprocessing ensures that the input images are appropriately prepared, addressing potential challenges like variations in lighting, orientation, or noise. With its intuitive API and compatibility with Node.js, Image-js facilitates efficient image preprocessing, enhancing the overall performance and reliability of your OCR application.
 
 ## Difficulties and Problems
 
-I faced problems in Deployment and Production...The search and Save Functionality works in Local Machine but it took lot of time in doing that on Render. Also Firefox refused to establish connection to Render. 
+I faced problems in Deployment and Production...The search and Save Functionality works in Local Machine but it took lot of time in doing that on Render. Also Firefox refused to establish connection to Render. It took time to load as there were some web socket connections.
