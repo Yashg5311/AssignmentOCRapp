@@ -117,3 +117,6 @@ We have implemented  features like comprehensive image processing pipeline withi
    ![Screenshot (277)](https://github.com/Yashg5311/AssignmentOCRapp/assets/91370994/2c9a08db-f763-477d-89ba-d12da37d6522)
 
 
+## Difficulties and Problems
+
+I faced problems in Deployment and Production...The search and Save Functionality works in Local Machine but it took lot of time in doing that on Render. Also Firefox refused to establish connection to Render. 
